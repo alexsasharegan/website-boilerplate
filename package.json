@@ -1,0 +1,55 @@
+{
+  "name": "website_boilerplate",
+  "version": "1.0.0",
+  "description": "Start a website with ES2015, SCSS, and webpack",
+  "main": "index.js",
+  "engines": {
+    "node": "*",
+    "npm": "*"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack --progress --colors --watch --display-error-details"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexsasharegan/website-boilerplate.git"
+  },
+  "author": "Alex Regan (Parametric Studios)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexsasharegan/website-boilerplate/issues"
+  },
+  "homepage": "https://github.com/alexsasharegan/website-boilerplate#readme",
+  "devDependencies": {
+    "babel-core": "^6.13.2",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-transform-runtime": "^6.12.0",
+    "babel-preset-es2015": "^6.13.2",
+    "babel-preset-stage-0": "^6.5.0",
+    "css-loader": "^0.23.1",
+    "file-loader": "^0.9.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-clean-css": "^2.0.12",
+    "gulp-concat": "^2.6.0",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^2.0.0",
+    "image-webpack-loader": "^2.0.0",
+    "script-loader": "^0.7.0",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "webpack": "^1.13.1"
+  },
+  "dependencies": {
+    "babel-runtime": "^6.11.6",
+    "bootstrap-sass": "^3.3.7",
+    "font-awesome": "^4.6.3",
+    "jquery": "^3.1.0",
+    "node-sass": "^3.8.0",
+    "sass-loader": "^4.0.0"
+  }
+}
