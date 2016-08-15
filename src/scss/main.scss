@@ -1,5 +1,10 @@
+// Bootstrap 3
 // @import 'bootstrap-custom';
 
-@import 'variables';
-@import 'base';
+// Bootstrap 4
+@import 'base/bootstrap-settings';
+@import 'bootstrap';
+
+@import 'base/variables';
+@import 'base/base';
 @import 'test';

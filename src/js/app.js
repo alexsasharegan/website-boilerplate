@@ -1,5 +1,5 @@
 // Imports
-import { test } from './utils/test'
+import { test } from './test/test'
 
 // App CSS
 require('style!css!sass!appStyles');

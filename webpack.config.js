@@ -38,28 +38,32 @@ module.exports = {
     alias: {
       Main      : `${dirs.src.scripts}/main.js`,
       appStyles : `${dirs.src.styles}/main.scss`,
+      bootstrap : `${dirs.src.styles}/main.scss`,
     },
     extensions: ['', '.js', '.jsx'],
   },
   module: {
     loaders: [
-      // the url-loader uses DataUrls.
-      {
-        test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: "url-loader?limit=10000&mimetype=application/font-woff"
-      },
+      // **IMPORTANT** This is needed so that each bootstrap js file required by
+      // bootstrap-webpack has access to the jQuery object
+      { test: /bootstrap\/js\//, loader: 'imports?jQuery=jquery' },
+
+      // Needed for the css-loader when [bootstrap-webpack](https://github.com/bline/bootstrap-webpack)
+      // loads bootstrap's css.
+      { test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,   loader: "url?limit=10000&mimetype=application/font-woff" },
+      { test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,  loader: "url?limit=10000&mimetype=application/font-woff" },
+      { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,    loader: "url?limit=10000&mimetype=application/octet-stream" },
+      { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,    loader: "file" },
+      { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,    loader: "url?limit=10000&mimetype=image/svg+xml" },
       // the file-loader emits files.
-      {
-        test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: "file-loader"
-      },
-      {
-        test: /\.(jpe?g|png|gif|svg)$/i,
-        loaders: [
-          'file?hash=sha512&digest=hex&name=[hash].[ext]',
-          'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
-        ]
-      },
+      // { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file-loader" },
+      // {
+      //   test: /\.(jpe?g|png|gif|svg)$/i,
+      //   loaders: [
+      //     'file?hash=sha512&digest=hex&name=[hash].[ext]',
+      //     'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
+      //   ]
+      // },
       {
         test: /\.jsx?$/,
         loader: 'babel-loader',
@@ -74,7 +78,8 @@ module.exports = {
   },
   sassLoader: {
     includePaths: [
-      // path.resolve(__dirname, './node_modules/foundation-sites/scss')
+      // path.resolve(__dirname, './node_modules/foundation-sites/scss'),
+      path.resolve(__dirname, './node_modules/bootstrap/scss'),
     ]
   },
   // devtool: 'cheap-module-eval-source-map',
