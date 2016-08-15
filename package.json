@@ -2,7 +2,7 @@
   "name": "website_boilerplate",
   "version": "1.0.0",
   "description": "Start a website with ES2015, SCSS, and webpack",
-  "main": "index.js",
+  "main": "server.js",
   "engines": {
     "node": "*",
     "npm": "*"
