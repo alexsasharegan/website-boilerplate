@@ -8,8 +8,8 @@
     "npm": "*"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "bundle": "webpack --progress --colors --watch --display-error-details"
+    "bundle": "webpack --optimize-minimize --optimize-occurrence-order",
+    "dev": "webpack --progress --colors --watch --display-error-details"
   },
   "repository": {
     "type": "git",
