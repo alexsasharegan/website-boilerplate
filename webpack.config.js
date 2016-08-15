@@ -1,16 +1,17 @@
+let path = require('path');
 let webpack = require('webpack');
 let dirs = {
-  dist: {
-    scripts : 'public_html/assets/js',
-    styles  : 'public_html/assets/css',
-  },
   src: {
     scripts : 'src/js',
     styles  : 'src/scss',
   },
   theme: {
-    styles : '_theme/thforestBedrockone1/styles',
-    scripts: '_theme/thforestBedrockone1/scripts',
+    scripts: '_theme/scripts',
+    styles : '_theme/styles',
+  },
+  dist: {
+    scripts : 'dist/assets/js',
+    styles  : 'dist/assets/css',
   },
 };
 module.exports = {
@@ -73,8 +74,8 @@ module.exports = {
   },
   sassLoader: {
     includePaths: [
-      path.resolve(__dirname, './node_modules/foundation-sites/scss')
+      // path.resolve(__dirname, './node_modules/foundation-sites/scss')
     ]
   },
-  devtool: 'cheap-module-eval-source-map',
+  // devtool: 'cheap-module-eval-source-map',
 };
