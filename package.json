@@ -8,8 +8,10 @@
     "npm": "*"
   },
   "scripts": {
-    "bundle": "webpack --optimize-minimize --optimize-occurrence-order",
-    "dev": "webpack --progress --colors --watch --display-error-details"
+    "start-dev": "nodemon server.js",
+    "start": "node server.js",
+    "build-dev": "webpack --progress --colors --watch --display-error-details",
+    "bundle": "webpack --optimize-minimize --optimize-occurrence-order"
   },
   "repository": {
     "type": "git",
